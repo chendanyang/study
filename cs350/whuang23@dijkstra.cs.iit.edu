@@ -1,0 +1,111 @@
+/*
+
+C.Problems
+1:a In sign magnitude 110111 represents decimal -23
+  b In 1's complement -8
+  c In 2's complement -9
+2:a 000000 or 100000
+  b 111111 or 111111
+  c 000000
+3:a 111111 -31
+  b 100000 -31
+  c 100000 -32
+4:a 
+
+5:a 111011+101110 = 1101001 = 105
+  b -5
+  c -18
+  d -23
+
+6: 12+18 = 001100+010010 = 011110
+7: 13-30 = 13+(-30) = 001101+100010 = 101111
+8: -25 -7 = (-25)+(-7) = 100111+111001  = 100000
+9:  24+10 = 34 ==> 011000 + 001010 = 101010(-22)
+10: 428(10) = 110101100(2) = 654(8) = 1AC(16)
+11: A63CB59(16) = 1230745531(8)
+12: FF = -7F(16) = -127(10) a= unsigned binary = 1111 1111 = 255
+    b = 1's com = -127
+    c = 2's com = -128
+13: F556(16) = 1111 0101 0101 1011 =(2'S COM NEGATIVE)=0000 1010 1010 0101 = 0 A A 5(16)
+*/
+// CS 350, Fall 2012
+// Lab 1 -- Declaring, manipulating, and printing signed and unsigned integers of various lengths
+//
+// Illinois Institute of Technology, (c) 2013, James Sasaki
+
+#include <stdio.h>  // to access printf, scanf
+#include <limits.h>
+int main() {
+    printf("CS 350 Lab 1 for %s\n\n", "***Weicheng Huang ***");  
+
+    // For each of the types char, unsigned char, short int, unsigned short int,
+    // int, unsigned int, long int, and unsigned long int, we print out:
+    //     (1) The number of bytes it takes to store values of that type
+    //     (2) The largest value of that type in decimal and in hex
+    //     (3) The result of adding 1 to that largest value.
+    //
+    // [Note: Adding 1 to the largest value of a signed type should yield the
+    // most negative value of that type; adding 1 to the largest value of an
+    // unsigned type should yield 0.]
+
+    char ch1 = (char) 0x7f;
+    printf("type char takes %ld byte(s), ", sizeof(char));
+    printf("has max value of %d = %#hhx\n", ch1, ch1);
+    ch1++;
+    printf("Adding 1 yields %d = %#hhx\n", ch1, ch1);
+    printf("\n");
+
+    unsigned char ch2 = (unsigned char) 0xff;
+    printf("type unsigned char takes %ld byte(s), ", sizeof(unsigned char));
+    printf("has max value of %u = %#hhx\n", ch2, ch2);
+    ch2++;
+    printf("Adding 1 yields %u = %#hhx\n", ch2, ch2);
+    printf("\n");
+
+    short int ch3 =  SHRT_MAX;
+    printf("type short int takes %ld byte(s), ", sizeof(short int));
+    printf("has max value of %d = %#hx\n", ch3, ch3);
+    ch3++;
+    printf("Adding 1 yields %d = %#hx\n", ch3, ch3);
+    printf("\n");
+
+    unsigned short int ch4 = USHRT_MAX;
+    printf("type unsigned short int takes %ld byte(s), ", sizeof(unsigned short int));
+    printf("has max value of %u = %#hx\n", ch4, ch4);
+    ch4++;
+    printf("Adding 1 yields %u = %#hx\n", ch4, ch4);
+    printf("\n");
+
+    int ch5 = INT_MAX;
+    printf("type int takes %ld byte(s), ", sizeof(int));
+    printf("has max value of %d = %#x\n", ch5, ch5);
+    ch5++;
+    printf("Adding 1 yields %d = %#x\n", ch5, ch5);
+    printf("\n");
+
+    unsigned int ch6 =UINT_MAX;
+    printf("type unsigned int takes %ld byte(s), ", sizeof(unsigned int));
+    printf("has max value of %u = %#x\n", ch6, ch6);
+    ch6++;
+    printf("Adding 1 yields %u = %#x\n", ch6, ch6);
+    printf("\n");
+
+    long int ch7 =  LONG_MAX;
+    printf("type long int takes %ld byte(s), ", sizeof(long int));
+    printf("has max value of %ld = %#lx\n", ch7, ch7);
+    ch7++;
+    printf("Adding 1 yields %ld = %#lx\n", ch7, ch7);
+    printf("\n");
+
+    unsigned long int ch8 = ULONG_MAX;
+    printf("type unsigned long int takes %ld byte(s), ", sizeof(unsigned long int));
+    printf("has max value of %lu = %#lx\n", ch8, ch8);
+    ch8++;
+    printf("Adding 1 yields %lu = %#lx\n", ch8, ch8);
+    printf("\n");
+
+    
+
+    return 0;
+}
+

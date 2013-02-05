@@ -1,0 +1,79 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>My First Web Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+  </head>
+  <body id="home">
+  
+    <h1>My First Web Page</h1>
+    
+    <h2>It's Really Awesome</h2>
+    
+    <ul id="navigation">
+      <li>Home</li>
+      <li>Contact</li>
+      <li>Resume</li>
+    </ul>
+    
+    
+    
+    
+    <p>
+      Here's a nice paragraph of text. You can
+      take it straight to the browser.
+    </p>
+
+    <h2 class="label">Hi!</h2>
+    
+    <p class="label">
+      Don't burn yourself on the hot website.
+    </p>
+
+    <ul class="list">
+      <li>Red</li>
+      <li>Yellow</li>
+      <li>Blue</li>
+    </ul>
+    
+    <ol class="list">
+      <li>Eenie</li>
+      <li>Meenie</li>
+      <li>Minie</li>
+      <li>Moe</li>
+    </ol>
+    
+  </body>
+</html>
+
+
+body {
+  background: black;
+  color: white;
+  line-height:18px;
+  font-size:14px;
+}
+
+ul#navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#navigation li {
+  float: left;
+  padding-right: .5em;
+  padding-left: .5em;
+  border-left: 1px solid white;
+}
+
+ul#navigation li:first-child {
+  border-left: 0px;
+}
+
+p { clear: both; }
+h1 {line-height: 20px;}
+
