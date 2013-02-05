@@ -1,0 +1,15 @@
+WeichengHuang 's answers
+    What is the name of the directory this command just created? (From now on we'll call this the quiz directory.)
+
+a:quizdir
+
+    Which file is the largest one in the quiz directory? Do not count directories.
+
+a:f3.txt
+
+    There are some subdirectories in the quiz directory. In one of them is a hidden file. What is the name of that file?
+
+a:.secret  at door2
+    What word is inside that file?
+
+a: durian
