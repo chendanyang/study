@@ -1,0 +1,30 @@
+body {
+  background: gray;
+  color: white;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: center;
+  font-family:Arial;
+  outline-width: 5px;	
+}
+
+h1 {
+  color:black;
+}
+
+.intro {
+  color: black;
+  font-size: 16px;
+}
+
+.item {
+  color: red;
+  background: white;
+  text-align: left;
+}
+
+.content {
+  color: white;
+  text-align: left;
+}
+
