@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
   background-color: #274257;
   line-height: 20px;
   font-size: 16px;
@@ -44,35 +43,11 @@ li{
 
 .item {
   color: #DFC184;
-=======
-  background: gray;
-  color: white;
-  line-height: 20px;
-  font-size: 16px;
-  text-align: center;
-  font-family:Arial;
-  outline-width: 5px;	
-}
-
-h1 {
-  color:black;
-}
-
-.intro {
-  color: black;
-  font-size: 16px;
-}
-
-.item {
-  color: red;
-  background: white;
->>>>>>> 1fa51069be0aa912390bc214e116f27b35b8733e
   text-align: left;
 }
 
 .content {
   color: white;
-<<<<<<< HEAD
   text-indent: 1em;
   text-align: left;
 }
@@ -81,8 +56,5 @@ a{
   color: white;
   text-align: left;
   text-decoration: none;
-=======
-  text-align: left;
->>>>>>> 1fa51069be0aa912390bc214e116f27b35b8733e
 }
 
