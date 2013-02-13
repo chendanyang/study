@@ -1,0 +1,12 @@
+#lang racket
+;;----------------stack-class-------------
+(struct stack (array [tos #:mutable]))
+(define (make-stake) (stack (make-vector 10) 0))
+(define (push s elt)
+  (vector-set! (stack-array s) (stack-tos s) elt)
+  (set-stack-tos! s (+ (stack-tos s) 1)))
+(define (pop s)
+  (set-stack-tos! s (- (stack-tos s) 1))
+  (vector-ref (stack-array s) (stack-tos s)))
+(define (top s)
+  (vector-ref (stack-array s) (- (stack-tos s) 1)))
