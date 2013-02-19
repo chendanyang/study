@@ -7,8 +7,8 @@
  */
 
 #include <stdio.h>
-#include <strings.h>
-#define ARRAYLEN 10
+#include <string.h>
+#define ARRAYLEN 31
 
 
 int convert(int digits[]);
@@ -23,7 +23,7 @@ int main() {
 	printf("CS 350 Lab 3 for %s\n\n", "Weicheng Huang Section -01");  
 
 	char value[ARRAYLEN];
-	int digits[] ={1,1,1,1,1,1,1,1,0,0};
+	int digits[ARRAYLEN];
 	int output;
 
 	printf("Enter an binary number or 'q' to quit(less than 32 chars):");
@@ -87,18 +87,21 @@ void translate(char value[],int digits[]){
     initial = 1;
   }
   int k =0;
+  int j =0;
   for(k ;k<i;k++){
     digits[k] = initial;
   } 
-  for(i ;i<ARRAYLEN-1;i++){
-    if(value[i]=='0'){
+  for(i ;i<ARRAYLEN;i++){
+    if(value[j]==48){
       digits[i] = 0;
-    }else if (value[i]=='0'){
+    }else if (value[j]==49){
       digits[i] = 1;
     }else{
       digits[i] = 2;
     }
+  j++;
   }
+  
 }
 //-------------------------------------
 int power2(int point){
