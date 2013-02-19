@@ -28,13 +28,13 @@ int main() {
 
 	printf("Enter an binary number or 'q' to quit(less than 32 chars):");
 	scanf("%s", value);
-	//while (is_q(value)==1) {
-		//translate(value,digits);
+	while (is_q(value)==0) {
+		translate(value,digits);
 		output = convert(digits);
 		print_digits(output,digits);
 		printf("Enter an binary number or 'q' to quit(less than 32 chars):");
 		scanf("%s", value);
-	//} 
+	} 
 	printf("Thank you! see ya!\n\n");
 }
 
@@ -79,11 +79,21 @@ int unsignconver(int digits[]){
 }
 //==========================================================
 void translate(char value[],int digits[]){
-  int i = 0;
-  for(i = 0;i<ARRAYLEN-1;i++){
-    if(strcmp(value[i],'0')==0){
+  int i = ARRAYLEN-(int)strlen(value);
+  int initial;
+  if(value[0] == '0'){
+    initial = 0;
+  }else if(value[0] == '1'){
+    initial = 1;
+  }
+  int k =0;
+  for(k ;k<i;k++){
+    digits[k] = initial;
+  } 
+  for(i ;i<ARRAYLEN-1;i++){
+    if(value[i]=='0'){
       digits[i] = 0;
-    }else if (strcmp(value[i],'1')==0){
+    }else if (value[i]=='0'){
       digits[i] = 1;
     }else{
       digits[i] = 2;
@@ -101,10 +111,10 @@ int power2(int point){
 }
 
 int is_q(char value[]){
-  if(strcmp(value[0],'q')==0){
-    return 0;
-  }else{
+  if(value[0]=='q'){
     return 1;
+  }else{
+    return 0;
   }
 }
 

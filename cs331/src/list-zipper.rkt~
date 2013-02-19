@@ -1,0 +1,10 @@
+#lang racket
+(struct list-zip (before after))
+(define (make-list-zip x)
+  (list-zip '() x))
+(define (forward z)
+  (match z [(list-zip b a)
+            (list-zip (cons (car a) b) (cdr a))]))
+(define (backward z)
+  (match z [(list-zip b a)
+            (list-zip (cdr b) (cons (car b) a))]))
