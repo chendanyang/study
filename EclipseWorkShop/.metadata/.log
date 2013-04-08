@@ -1,0 +1,66 @@
+!SESSION 2013-04-08 16:04:00.565 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_09
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-08 16:05:07.486
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:07.486
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.486
+!MESSAGE Software being installed: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.486
+!MESSAGE Missing requirement: C/C++ Remote Debug Launcher 2.4.0.201302132326 (org.eclipse.cdt.launch.remote 2.4.0.201302132326) requires 'bundle org.eclipse.rse.ui [3.0.0,4.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:07.486
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.487
+!MESSAGE From: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.487
+!MESSAGE To: org.eclipse.cdt.launch.remote [2.4.0.201302132326]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-08 16:05:07.494
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:07.494
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.494
+!MESSAGE Software being installed: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.494
+!MESSAGE Missing requirement: C/C++ Remote Debug Launcher 2.4.0.201302132326 (org.eclipse.cdt.launch.remote 2.4.0.201302132326) requires 'bundle org.eclipse.rse.ui [3.0.0,4.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:07.494
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.494
+!MESSAGE From: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:07.494
+!MESSAGE To: org.eclipse.cdt.launch.remote [2.4.0.201302132326]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-08 16:05:29.898
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:29.898
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.898
+!MESSAGE Software being installed: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.898
+!MESSAGE Missing requirement: C/C++ Remote Debug Launcher 2.4.0.201302132326 (org.eclipse.cdt.launch.remote 2.4.0.201302132326) requires 'bundle org.eclipse.rse.ui [3.0.0,4.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:29.898
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.898
+!MESSAGE From: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.898
+!MESSAGE To: org.eclipse.cdt.launch.remote [2.4.0.201302132326]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-04-08 16:05:29.903
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:29.903
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.903
+!MESSAGE Software being installed: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.903
+!MESSAGE Missing requirement: C/C++ Remote Debug Launcher 2.4.0.201302132326 (org.eclipse.cdt.launch.remote 2.4.0.201302132326) requires 'bundle org.eclipse.rse.ui [3.0.0,4.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-04-08 16:05:29.903
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.903
+!MESSAGE From: C/C++ Remote Launch 6.0.0.201302132326 (org.eclipse.cdt.launch.remote.feature.group 6.0.0.201302132326)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-04-08 16:05:29.903
+!MESSAGE To: org.eclipse.cdt.launch.remote [2.4.0.201302132326]
