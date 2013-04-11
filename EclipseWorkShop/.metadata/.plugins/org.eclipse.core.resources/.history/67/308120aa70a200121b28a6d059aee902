@@ -1,0 +1,10 @@
+
+public class Example {
+	float x =400;
+	float y =350;
+	float rotation =0.0f;
+	
+	long last_frame;
+	int fps;
+	long last_fps;
+}

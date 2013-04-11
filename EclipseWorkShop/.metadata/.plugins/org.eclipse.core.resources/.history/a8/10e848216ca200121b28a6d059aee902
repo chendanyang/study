@@ -1,0 +1,14 @@
+
+public class R {
+
+
+	public static void main(String[] args) {
+		try{
+			LibraryLoader.load();
+		}catch(Exception e){
+			System.out.println("Damn it!");
+		}
+		
+
+	}
+}
