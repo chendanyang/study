@@ -1,0 +1,25 @@
+#lang racket
+(define-struct bst (data left right) #:transparent)
+
+;;adding element
+(define (add elt tree)
+  (cond [(null? tree) (bst elt '() '())]
+        [(< elt (bst-data tree))
+         (bst (bst-data tree) (add elt (bst-left tree)) (bst-right tree))]
+        [(> elt (bst-data tree))
+         (bst (bst-data tree) (bst-left tree) (add elt (bst-right tree)))]
+        [else tree]
+        ))
+;;mulit-add
+(define (mulit-add tree elts)
+  (if (null? elts) tree
+      ;;else
+      (mulit-add (add (car elts) tree) (cdr elts))))
+;;find predecessor
+(define (go-right tree)
+  (if (null? (bst-right tree)) tree
+      ;;else
+      (go-right (bst-right tree))))
+(define (find-pred tree)
+  (go-right (bst-left tree)))
+             
