@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="13" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
-<window height="1040" width="960" x="960" y="0">
+<window height="1040" width="960" x="740" y="53">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -31,23 +31,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="R.java" partName="R.java" path="E:/codeinGithub/study/EclipseWorkShop/Test/src/R.java" title="R.java" tooltip="Test/src/R.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test/src/R.java"/>
-<editorState selectionLength="0" selectionOffset="390"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LibraryLoader.java" partName="LibraryLoader.java" path="E:/codeinGithub/study/EclipseWorkShop/Test/src/LibraryLoader.java" title="LibraryLoader.java" tooltip="Test/src/LibraryLoader.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test/src/LibraryLoader.java"/>
-<editorState selectionLength="0" selectionOffset="582"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example.java" partName="Example.java" path="E:/codeinGithub/study/EclipseWorkShop/Test/src/Example.java" title="Example.java" tooltip="Test/src/Example.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test/src/Example.java"/>
-<editorState selectionLength="0" selectionOffset="555"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Display.java" partName="Display.java" path="E:/codeinGithub/study/EclipseWorkShop/Game/src/Display.java" title="Display.java" tooltip="Game/src/Display.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Game/src/Display.java"/>
+<editorState selectionLength="0" selectionOffset="545"/>
 </editor>
 </editors>
 <views>
@@ -56,8 +46,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
+<expanded>&#x0A;<category IMemento.internal.id="Errors"/>
 <category IMemento.internal.id="Warnings (13 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
@@ -293,47 +282,12 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/R.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Test/jar\/lwjgl.jar&lt;org.lwjgl.openal(AL.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/LibraryLoader.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Game/src/Client.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/Example.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Game/src/Display.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Game/src/Client.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/R.java"/>
 </editors>
-<item historyLabel="AL.class" index="1">
-<position/>
-</item>
-<item historyLabel="LibraryLoader.java" index="2">
-<position info="not_deleted" x="1069" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="396" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="390" y="0"/>
-</item>
-<item historyLabel="LibraryLoader.java" index="2">
-<position info="not_deleted" x="582" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="390" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="179" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
 <item historyLabel="R.java" index="0">
 <position/>
 </item>
@@ -388,65 +342,101 @@
 <item historyLabel="R.java" index="0">
 <position/>
 </item>
-<item historyLabel="Client.java" index="3">
+<item historyLabel="Client.java" index="1">
 <position/>
 </item>
 <item historyLabel="R.java" index="0">
 <position/>
 </item>
-<item historyLabel="Client.java" index="3">
+<item historyLabel="Client.java" index="1">
 <position info="not_deleted" x="95" y="2"/>
 </item>
 <item historyLabel="R.java" index="0">
 <position/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position/>
 </item>
 <item historyLabel="R.java" index="0">
 <position info="not_deleted" x="244" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="1207" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="626" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="630" y="6"/>
 </item>
 <item historyLabel="R.java" index="0">
 <position info="not_deleted" x="244" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="716" y="61"/>
 </item>
 <item historyLabel="R.java" index="0">
 <position info="not_deleted" x="141" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="716" y="61"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="792" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="1210" y="0"/>
 </item>
 <item historyLabel="R.java" index="0">
 <position info="not_deleted" x="390" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="1210" y="0"/>
 </item>
-<item historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="555" y="0"/>
 </item>
 <item historyLabel="R.java" index="0">
 <position info="not_deleted" x="390" y="0"/>
 </item>
-<item active="true" historyLabel="Example.java" index="4">
+<item historyLabel="Example.java" index="2">
 <position info="not_deleted" x="555" y="0"/>
+</item>
+<item historyLabel="Display.java" index="3">
+<position/>
+</item>
+<item historyLabel="Client.java" index="4">
+<position/>
+</item>
+<item historyLabel="R.java" index="5">
+<position info="not_deleted" x="390" y="0"/>
+</item>
+<item historyLabel="Client.java" index="4">
+<position/>
+</item>
+<item historyLabel="Example.java" index="2">
+<position info="not_deleted" x="555" y="0"/>
+</item>
+<item historyLabel="Client.java" index="4">
+<position/>
+</item>
+<item historyLabel="Display.java" index="3">
+<position info="not_deleted" x="26363" y="0"/>
+</item>
+<item historyLabel="Client.java" index="4">
+<position/>
+</item>
+<item historyLabel="Display.java" index="3">
+<position info="not_deleted" x="26363" y="0"/>
+</item>
+<item historyLabel="Client.java" index="4">
+<position/>
+</item>
+<item historyLabel="Display.java" index="3">
+<position info="not_deleted" x="26363" y="0"/>
+</item>
+<item active="true" historyLabel="Display.java" index="3">
+<position info="not_deleted" x="1379" y="5"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -465,11 +455,14 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example.java" tooltip="Test/src/Example.java">
-<persistable path="/Test/src/Example.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Client.java" tooltip="Game/src/Client.java">
 <persistable path="/Game/src/Client.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Display.java" tooltip="Game/src/Display.java">
+<persistable path="/Game/src/Display.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example.java" tooltip="Test/src/Example.java">
+<persistable path="/Test/src/Example.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LibraryLoader.java" tooltip="Test/src/LibraryLoader.java">
 <persistable path="/Test/src/LibraryLoader.java"/>
