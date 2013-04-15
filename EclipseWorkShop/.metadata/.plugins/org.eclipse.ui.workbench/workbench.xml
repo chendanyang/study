@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="1040" width="960" x="740" y="53">
 <fastViewData fastViewLocation="1024"/>
@@ -19,7 +19,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -31,6 +32,8 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -38,6 +41,10 @@
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Display.java" partName="Display.java" path="E:/codeinGithub/study/EclipseWorkShop/Game/src/Display.java" title="Display.java" tooltip="Game/src/Display.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Game/src/Display.java"/>
 <editorState selectionLength="0" selectionOffset="545"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example.java" partName="Example.java" path="E:/codeinGithub/study/EclipseWorkShop/Test/src/Example.java" title="Example.java" tooltip="Test/src/Example.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Test/src/Example.java"/>
+<editorState selectionLength="5" selectionOffset="620"/>
 </editor>
 </editors>
 <views>
@@ -287,22 +294,10 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Game/src/Display.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Game/src/Client.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/R.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Test/src/Example.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Fps/src/CounterAttack.jar"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" path="/Fps/game/aa.class"/>
 </editors>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
-<item historyLabel="R.java" index="0">
-<position/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="325" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="355" y="0"/>
-</item>
-<item historyLabel="R.java" index="0">
-<position info="not_deleted" x="386" y="0"/>
-</item>
 <item historyLabel="R.java" index="0">
 <position/>
 </item>
@@ -435,8 +430,23 @@
 <item historyLabel="Display.java" index="3">
 <position info="not_deleted" x="26363" y="0"/>
 </item>
-<item active="true" historyLabel="Display.java" index="3">
+<item historyLabel="Display.java" index="3">
 <position info="not_deleted" x="1379" y="5"/>
+</item>
+<item historyLabel="Example.java" index="6">
+<position info="not_deleted" x="620" y="5"/>
+</item>
+<item historyLabel="CounterAttack.jar" index="7">
+<position/>
+</item>
+<item historyLabel="Example.java" index="6">
+<position info="not_deleted" x="620" y="5"/>
+</item>
+<item historyLabel="aa.class" index="8">
+<position/>
+</item>
+<item active="true" historyLabel="Display.java" index="3">
+<position info="not_deleted" x="545" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -455,14 +465,20 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="aa.class" tooltip="Fps/game/aa.class">
+<persistable path="/Fps/game/aa.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="CounterAttack.jar" tooltip="Fps/src/CounterAttack.jar">
+<persistable path="/Fps/src/CounterAttack.jar"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example.java" tooltip="Test/src/Example.java">
+<persistable path="/Test/src/Example.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Client.java" tooltip="Game/src/Client.java">
 <persistable path="/Game/src/Client.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Display.java" tooltip="Game/src/Display.java">
 <persistable path="/Game/src/Display.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Example.java" tooltip="Test/src/Example.java">
-<persistable path="/Test/src/Example.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LibraryLoader.java" tooltip="Test/src/LibraryLoader.java">
 <persistable path="/Test/src/LibraryLoader.java"/>

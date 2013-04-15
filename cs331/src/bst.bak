@@ -47,28 +47,22 @@
 
 ;;search patterns2 breadth first
 (define (bfs tree elt);;outface
-  (define q (make-queue))
-  (enqueue q tree)
-  (bfs-aux q elt)
+  (define queue (make-queue))
+  (enqueue queue tree)
+  (bfs-aux queue elt)
   )
 (define a (mulit-add null '(4 2 6 1 3 5 9)))
 
-(define (bfs-aux q elt);;inface
-  (if (empty? q) #f
-      ;;(let ([candidate (dequeue q)])
+(define (bfs-aux queue elt);;inface
+  (if (empty? queue) #f
+      (let ([candidate (dequeue queue)])
         ;;candidate is a complete tree node contains bst-data bst-left...
-      (let
-        ( [candidate (sign-queue q)])
-        (or (equal? (bst-data candidate) elt)
-            (begin                  
-                   (unless (null? (bst-left candidate))
-                           (enqueue q (bst-left candidate)))
+        (or (equal? (bst-data candidate elt))
+            (begin (unless (null? (bst-left candidate))
+                           (enqueue queue (bst-left candidate)))
                    (unless (null? (bst-right candidate))
-                           (enqueue q (bst-right candidate)))
-                  (bfs queue elt))
-         ))))
-(define (sign-queue q)
-  (dequeue q))
+                           (enqueue queue (bst-right candidate)))
+                   (bfs queue elt))))))
       
 ;;traversal1 preorder
 (define (preorder tree)
