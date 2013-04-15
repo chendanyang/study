@@ -13,6 +13,7 @@
 (define (top q)
   (vector-ref (queue-array q) ( queue-front q)))
 ;;(require "queue-class.rkt")by hand
+
 (define-struct bst (data left right) #:transparent)
 
 ;;adding element
