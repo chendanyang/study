@@ -2,24 +2,10 @@
  * CS 350, Spring 2013 Weicheng Huang
  * Lab 8: SDC simulator 
 
-
-
-
-
-
-
 */
 
-
-
-
-
-
-
-
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include <math.h>
 
 // Prototypes
     void helpMsg(void);
@@ -174,6 +160,7 @@ int instruction_cycle(void) {
 	switch (opcode){
 		case 0:
 			halted = 1;
+			printf("Halt!");
 			break;
 		case 1:
 			ld();
@@ -203,7 +190,7 @@ int instruction_cycle(void) {
 			io();
 			break;
 		default:
-			Printf("Error:Invalid opcode at address %d,Invalid number: %d",pc,mem[pc]);
+			printf("Error:Invalid opcode at address %d,Invalid number: %d",pc,mem[pc]);
 			break;
 	}
 	pc++;
@@ -219,26 +206,84 @@ int instruction_cycle(void) {
 		if(ir<0){
 			ir = 0-ir;
 		}
-		char[] buffer;
-		itoa(ir,buffer,10);
-		opcode = buffer[0] - '0';
-		radd = buffer[1] -'0';
-		int temp = buffer[2]-'0';
-		int memadd = buffer[3]-'0';
-		memadd +=temp*10;
-		
+		opcode = (int)(ir/1000);
+		//printf("opcode is %d \n",opcode);
+		radd = (int)((ir-opcode*1000)/100);
+		//printf("register address is %d \n",radd);
+		mmadd = ir-opcode*1000-radd*100;
+		//printf("memary address is %d \n",mmadd);
+}		
 //opcode operation
 		void ld(void){//1
-			printf("ld at %02d: %04d",pc,mem[pc]);
+			regs[radd] = mem[mmadd];
+			printf("Load register %d from memory location %02d\n",radd,mmadd);
 		}
+
 		void st(void){//2
-			printf("st at %02d: %04d",pc,mem[pc]);
-		void add(void)//3
-		void neg(void)//4
-		void ldm(void)//5
-		void addm(void)//6
-		void br(void)//7
-		void brp(void)//8
-		void io(void)//9
+			mem[mmadd] = regs[radd];
+			printf("Store register %d into memory location %02d\n",radd,mmadd);
+		}
+
+		void add(void){//3
+			regs[radd] +=mem[mmadd];
+			printf("Add contents of memory location %02d to register %d\n",mmadd,radd);
+		}
+
+		void neg(void){//4
+			regs[radd] = 0-regs[radd];
+			printf("Set register %d to its arithmetic negative(ignore %02d)\n",radd,mmadd);
+		}
+
+		void ldm(void){//5
+			regs[radd] = mmadd;
+			printf("Load register %d with %02d(not the contents of MM)\n",radd,mmadd);
+		}
+
+		void addm(void){//6
+			regs[radd] +=mmadd;
+			printf("Add %02d to register %d\n",mmadd,radd);
+		}
+
+		void br(void){//7
+			pc = mmadd;
+			printf("Go to location %02d(ignore R)\n",mmadd);
+		}
+
+		void brp(void){//8
+			if(regs[radd]>0){
+				pc = mmadd;
+			}
+			printf("Go to location %02d if register %d contains a value strictly greater than zero\n",mmadd,radd);
+		}
+
+		void io(void){//9
+			char temp;
+			switch(radd){
+				case 0:
+
+					printf("please input a character:");
+					scanf("%s\n",&temp);
+					regs[0] = temp;
+					break;
+				case 1:
+					printf("%c\n",regs[0]);
+					break;
+				case 2:
+					while(mem[mmadd]!=0){
+						printf("%c",mem[mmadd]);
+						mmadd++;
+					}
+					printf("\n");
+					break;
+				case 3:
+					printf("%d\n",regs[radd]);
+					break;
+				case 4:
+					dumpMemory(mem);
+					break;
+				default:
+					printf("Error: You have input a ignore instruction %05d",mem[mmadd]);
+			}
+		}
 
 
