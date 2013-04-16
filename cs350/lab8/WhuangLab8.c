@@ -40,7 +40,8 @@
 // and execute the read-in program starting at location 00.
 //
 int main(void) {
-	printf("*** STUB *** CS 350 Lab 8, Weicheng Huang\n");
+        printf(" ******************** STUB ********************\n ");
+	printf("Lab8 CS350 Author:Weicheng Huang\n");
 	initCPU();
 	readMemory();
 
