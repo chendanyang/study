@@ -24,7 +24,7 @@
 
 // Prototypes
     void helpMsg(void);
-	  void initCPU(CPU *cpu);
+	void initCPU(CPU *cpu);
     void readMemory(CPU *cpu);
     void dumpRegisters(CPU *cpu);
     void dumpMemory(CPU *cpu);
