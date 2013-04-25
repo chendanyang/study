@@ -1,0 +1,25 @@
+
+#include <stdio.h>
+#include <math.h>
+int main(void){
+	typedef struct {int a,b;} Pair;
+	Pair x[2];
+	Pair *p;
+	int *q,*r;
+	x[0].a = 10;
+	x[0].b = 20;
+	x[1].a = 30;
+	x[1].b = 40;
+	p = &x[0];
+	q = &x[0].b;
+	r = &x[1].a;
+	printf("*p = %p \n",p);
+	printf("p+1 = %p \n",p+1);
+	printf("*x[0] = %p \n",&x[0]);
+	printf("&(x[0].b) = %p \n",&(x[0].b));
+	printf("&(x[0].a)+1 = %p \n",&(x[0].a)+1);
+	printf("*x[1] = %p \n",&x[1]);
+	printf("*x[1].a = %p \n",&x[1].a);
+	printf("%d\n",&(x[0].b)==&(x[0].a)+1);
+
+}
