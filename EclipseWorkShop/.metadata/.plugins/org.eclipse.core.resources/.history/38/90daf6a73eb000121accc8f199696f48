@@ -1,0 +1,9 @@
+public class T{
+    public static void main(String[] args){
+    	newe();
+    }
+    public static void newe(){
+	System.out.println("Hello World from new() mathod");
+    }
+
+}
