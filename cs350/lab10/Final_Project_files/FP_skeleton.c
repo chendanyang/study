@@ -37,7 +37,7 @@
 	void dump_registers(CPU *cpu);
 	char get_condition_code(CPU *cpu);
 	void set_condition_code(CPU *cpu, Word value);
-  void readfile(CPU *cpu);
+int readfile(CPU *cpu);
 	// Instruction cycle functions
 	//
 	void fetch_instr(CPU *cpu);
@@ -46,7 +46,7 @@
 	// Functions for executing each instruction.
 	// TRAP uses readchar() to read a character (GETC, IN).
 	//
-  int op(Word opcode);
+        int op(Word opcode);
 	void instr_ADD (CPU *cpu);
 	void instr_AND (CPU *cpu);
 	void instr_BR  (CPU *cpu);
@@ -76,12 +76,13 @@ int main() {
   printf("Lab10 CS350 Author:Weicheng Huang\n");
   CPU cpu;
   init_CPU(&cpu);
-  readfile(&cpu);
+  Address origin  = cpu.pgm_counter;
+  Address end =  readfile(&cpu);
 	printf("\nRegisters:\n");
 	dump_registers(&cpu);
 
 	printf("\nMemory:\n");
-//	dumpMemory(&cpu,origin,);
+	dumpMemory(&cpu,cpu.pgm_counter,end,1);
   
 	printf("\nBeginning execution:\n");
 	printf("At the > prompt, press return to execute the next instruction (or q to quit or h or ? for help).\n");
@@ -107,11 +108,13 @@ int main() {
 				dump_registers(&cpu);
 				break;
 			case 'm':
-//		dump_memory(&cpu);
-				break;
+			  int from,to;
+			  sscanf(command,"m %x %x",&from,&to);
+			  dump_memory(&cpu,from,to,1);
+			  break;
 			default:
-				instruction_cycle(&cpu);
-				break;
+			  instruction_cycle(&cpu);
+			  break;
 		}
 	}
 /*
@@ -132,7 +135,7 @@ int main() {
 	dump_registers(&cpu);
 
 	printf("\nMemory:\n");
-	//dumpMemory(&c);
+	dumpMemory(&cpu,origin,end,1);
 	/* *** STUB *** */
 }
 
@@ -181,8 +184,31 @@ void fetch_instr(CPU *cpu) {
 	cpu->instr_reg = cpu->memory[cpu->pgm_counter];
 	cpu->pgm_counter = (cpu->pgm_counter + 1) % MEMLEN;
 }
-  void dump_memory(CPU *cpu, Address from, Address to, int nonzero_only){}
-  void dump_registers(CPU *cpu){}
+  void dump_memory(CPU *cpu, Address from, Address to, int nonzero_only){
+    if(nonzero_only==1){
+      Address i;
+      for(i=from;i<=to;i++){
+	if(cpu->memory[i]!=0){
+	  printf("x%04hX: x%04hX \n ", i, cpu->memory[i]);
+	}
+      }
+    }else{
+      Address i ;
+      for(i=from;i<=to;i++){
+	  printf("x%04hX: x%04hX \n ", i, cpu->memory[i]);
+      }
+    }
+  }
+  void dump_registers(CPU *cpu){
+    Address i;
+    for(i=0;i<NBR_REGS;i++){
+      printf("%d:x%04hX ",i,cpu->reg[i]);
+      if(i==4||i==8){
+	printf("\n");
+      }
+    }
+  }
+
 	Word get_register(CPU *cpu, int regNbr){}
 	void set_register(CPU *cpu, int regNbr, Word newValue){}
 
@@ -233,7 +259,7 @@ void instruction_cycle(CPU *cpu) {
 /* /\* 	} *\/ */
 /* /\* } *\/ */
 	void instr_ADD (CPU *cpu)	{printf("Im working..");}
-	void instr_AND (CPU *cpu) {printf("Im working..");}
+void instr_AND (CPU *cpu) {printf("Im working..");}
 	void instr_BR  (CPU *cpu)	{printf("Im working..");}
 	void instr_err (CPU *cpu)	{printf("Im working..");}
 	void instr_JMP (CPU *cpu)	{printf("Im working..");}
@@ -260,9 +286,9 @@ void instruction_cycle(CPU *cpu) {
 
 /* *** STUB *** */
 
-	int op(Word opcode){
-		return opcode>>12;
-	}
+int op(Word opcode){
+  return opcode>>12;
+}
 // Read and return a character from standard input.  User must
 // enter return after the char.  Just pressing return causes \n
 // to be returned.  Any extra characters after the first are ignored.
@@ -273,9 +299,9 @@ int read_char() {
 	return buffer[0];
 }
 
-void readfile(CPU  *cpu){
-		char name[100];
-		printf("please tell me the name of the file:");
+Address readfile(CPU  *cpu){
+  char name[100];
+  printf("please tell me the name of the file:");
     fgets(name, sizeof name, stdin);
     FILE *f;
     unsigned int num[80];
@@ -287,17 +313,19 @@ void readfile(CPU  *cpu){
     	fgets(name, sizeof name, stdin);
    	  f=fopen(name,"r");
     }
-		unsigned int temp =0;
+    unsigned int temp =0;
     fscanf(f,"%x",&temp);
-		cpu->pgm_counter = temp;
-		int i = temp;
-		cpu->memory[i] = temp;
-
+    cpu->pgm_counter = temp;
+    int i = temp;
+    cpu->memory[i] = temp;
+    int end = 1;
     while (fscanf(f,"%x",&temp) != EOF){
-			cpu->memory[i] = temp;
-    	i++;
+      cpu->memory[i] = temp;
+      i++;
+      end++;
     }
     fclose(f);
+    return end;
 }
 	void helpMsg(void){}
 /* *** STUB *** */
