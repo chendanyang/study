@@ -7,7 +7,7 @@
 
 // Basic Declarations
 //
-	typedef short int Word;
+	typedef unsigned short Word;
 	typedef unsigned short int Address;
 
 	#define MEMLEN 65536
@@ -37,7 +37,7 @@
 	void dump_registers(CPU *cpu);
 	char get_condition_code(CPU *cpu);
 	void set_condition_code(CPU *cpu, Word value);
-int readfile(CPU *cpu);
+  Address readfile(CPU *cpu);
 	// Instruction cycle functions
 	//
 	void fetch_instr(CPU *cpu);
@@ -82,7 +82,7 @@ int main() {
 	dump_registers(&cpu);
 
 	printf("\nMemory:\n");
-	dumpMemory(&cpu,cpu.pgm_counter,end,1);
+	dump_memory(&cpu,cpu.pgm_counter,end,1);
   
 	printf("\nBeginning execution:\n");
 	printf("At the > prompt, press return to execute the next instruction (or q to quit or h or ? for help).\n");
@@ -93,6 +93,8 @@ int main() {
 		printf("%s", prompt);
 		fgets(command, sizeof command, stdin);		// Read past end of current line.
 		char op = command[0];		
+			  unsigned int from=0;
+				unsigned int too = 0;
 		switch(op){
 			case 'q':
 				cpu.running = 0;
@@ -108,9 +110,9 @@ int main() {
 				dump_registers(&cpu);
 				break;
 			case 'm':
-			  int from,to;
-			  sscanf(command,"m %x %x",&from,&to);
-			  dump_memory(&cpu,from,to,1);
+
+			  sscanf(command,"m %x %x",&from,&too);
+			  dump_memory(&cpu,(Address)from,(Address)too,1);
 			  break;
 			default:
 			  instruction_cycle(&cpu);
@@ -135,7 +137,7 @@ int main() {
 	dump_registers(&cpu);
 
 	printf("\nMemory:\n");
-	dumpMemory(&cpu,origin,end,1);
+	dump_memory(&cpu,origin,end,1);
 	/* *** STUB *** */
 }
 
@@ -143,6 +145,7 @@ int main() {
 //
 //
 void init_CPU(CPU *cpu) {
+	printf("Initilizing CPU...\n");
 	cpu->pgm_counter = 0;
 	cpu->instr_reg = 0;
 	cpu->condition_code = 0 /*** STUB ***/;  // Z condition code on power-up
@@ -151,13 +154,17 @@ void init_CPU(CPU *cpu) {
 	int regNbr = 0;
 	while (regNbr < NBR_REGS) {
 		set_register(cpu, regNbr++, 0);
-	}
 
-	Address addr = 0;
+	}
+	printf("Finish Reg...\n");
+	unsigned int addr = 0;
 	while(addr<MEMLEN) {
 		cpu->memory[addr] = 0;
+		printf("initinalizing the %d memory\n",addr);
 		addr++;
+
 	}
+	printf("Initilize CPU done!\n");
 }
 
 // -------------------- MEMORY ROUTINES --------------------
@@ -184,18 +191,19 @@ void fetch_instr(CPU *cpu) {
 	cpu->instr_reg = cpu->memory[cpu->pgm_counter];
 	cpu->pgm_counter = (cpu->pgm_counter + 1) % MEMLEN;
 }
-  void dump_memory(CPU *cpu, Address from, Address to, int nonzero_only){
-    if(nonzero_only==1){
+
+void dump_memory(CPU *cpu, Address from, Address to, int nonzero_only){
+   if(nonzero_only==1){
       Address i;
       for(i=from;i<=to;i++){
-	if(cpu->memory[i]!=0){
-	  printf("x%04hX: x%04hX \n ", i, cpu->memory[i]);
-	}
+				if(cpu->memory[i]!=0){
+	 			 printf("x%04hX: x%04hX \n ", i, cpu->memory[i]);
+				}
       }
     }else{
       Address i ;
       for(i=from;i<=to;i++){
-	  printf("x%04hX: x%04hX \n ", i, cpu->memory[i]);
+			  printf("x%04hX: x%04hX \n ", i, cpu->memory[i]);
       }
     }
   }
@@ -204,16 +212,24 @@ void fetch_instr(CPU *cpu) {
     for(i=0;i<NBR_REGS;i++){
       printf("%d:x%04hX ",i,cpu->reg[i]);
       if(i==4||i==8){
-	printf("\n");
+				printf("\n");
       }
     }
   }
 
-	Word get_register(CPU *cpu, int regNbr){}
-	void set_register(CPU *cpu, int regNbr, Word newValue){}
+	Word get_register(CPU *cpu, int regNbr){
+	return cpu->reg[regNbr];
+	}
+	void set_register(CPU *cpu, int regNbr, Word newValue){
+	cpu->reg[regNbr] = newValue;
+	}
 
-	char get_condition_code(CPU *cpu){}
-	void set_condition_code(CPU *cpu, Word value){}
+	char get_condition_code(CPU *cpu){
+	return cpu->condition_code;
+	}
+	void set_condition_code(CPU *cpu, Word value){
+	cpu->condition_code = value;
+	}
 
 // Execute an instruction cycle
 //   Fetch an instruction
@@ -226,7 +242,7 @@ void instruction_cycle(CPU *cpu) {
 	//
 	Address old_pc = cpu->pgm_counter;
 	fetch_instr(cpu);
-	printf("x%04hX: x%04hX  ", old_pc, cpu->instr_reg);
+	printf("x%04hX: x%04hX  \n", old_pc, cpu->instr_reg);
 
 	// Execute instruction; set halt = 1 if execution is to stop
 	// (TRAP HALT or internal error).
@@ -251,7 +267,6 @@ void instruction_cycle(CPU *cpu) {
 	default: printf("Bad opcode: %d; quitting\n", op(cpu->instr_reg)); cpu->running = 0; break;
 	}
 }
-	/* *** STUB *** */
 
 /* /\* 	default: *\/ */
 /* /\* 		printf("Bad opcode: %d; quitting\n", op(cpu->instr_reg)); *\/ */
@@ -259,7 +274,7 @@ void instruction_cycle(CPU *cpu) {
 /* /\* 	} *\/ */
 /* /\* } *\/ */
 	void instr_ADD (CPU *cpu)	{printf("Im working..");}
-void instr_AND (CPU *cpu) {printf("Im working..");}
+  void instr_AND (CPU *cpu) {printf("Im working..");}
 	void instr_BR  (CPU *cpu)	{printf("Im working..");}
 	void instr_err (CPU *cpu)	{printf("Im working..");}
 	void instr_JMP (CPU *cpu)	{printf("Im working..");}
@@ -284,10 +299,11 @@ void instr_AND (CPU *cpu) {printf("Im working..");}
 /* /\* 	printf("BR instruction; *** STUB ***\n"); *\/ */
 
 
-/* *** STUB *** */
 
 int op(Word opcode){
-  return opcode>>12;
+	Word op = opcode>>12;
+	printf("The opcode is %d\n",op);
+  return op;
 }
 // Read and return a character from standard input.  User must
 // enter return after the char.  Just pressing return causes \n
@@ -299,26 +315,26 @@ int read_char() {
 	return buffer[0];
 }
 
-Address readfile(CPU  *cpu){
-  char name[100];
-  printf("please tell me the name of the file:");
-    fgets(name, sizeof name, stdin);
+Address readfile(CPU *cpu){
+  char fname[100];
+	printf("name of file?：");
+	scanf("%s",fname);
     FILE *f;
     unsigned int num[80];
 
-    f=fopen(name,"r");
+    f=fopen(fname,"r");
     while (f==NULL){
     	printf("\nfile doesnt exist?!\n");
-		  printf("please tell me the name of the file:");
-    	fgets(name, sizeof name, stdin);
-   	  f=fopen(name,"r");
+			printf("name of file?：");
+			scanf("%s",fname);
+   	  f=fopen(fname,"r");
     }
     unsigned int temp =0;
     fscanf(f,"%x",&temp);
     cpu->pgm_counter = temp;
     int i = temp;
     cpu->memory[i] = temp;
-    int end = 1;
+    Address end = 1;
     while (fscanf(f,"%x",&temp) != EOF){
       cpu->memory[i] = temp;
       i++;
@@ -327,5 +343,13 @@ Address readfile(CPU  *cpu){
     fclose(f);
     return end;
 }
-	void helpMsg(void){}
-/* *** STUB *** */
+
+
+	void helpMsg(void){
+	printf("Commands:\n");	
+	printf("  h - Help\n");	
+	printf("  q - Quit\n");	
+	printf("  r - Dump registers\n");	
+	printf("  m hex_n1 hex_n2 - Dump memory values from hex_n1 - hex_n2\n");	
+	printf("(carriage return) - execute one instruction if CPU is running.\n");	
+	}
