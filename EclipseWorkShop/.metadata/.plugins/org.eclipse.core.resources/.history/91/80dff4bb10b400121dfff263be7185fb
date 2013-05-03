@@ -1,0 +1,66 @@
+
+class Athlete {
+	String lastName;
+	String firstName;
+	int age;
+	double adRevenue;
+	char Venue;
+	String sport;
+	public Athlete() {
+		lastName = "";
+		firstName = "";
+		age = 0;
+		adRevenue = 0.0;
+		Venue = 0;
+		sport = "";
+	}
+	public Athlete(String aLastName,String aFirstName,int aAge,double aAdRevenue,char aVenue,String aSport){
+		
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public double getAdRevenue() {
+		return adRevenue;
+	}
+	public void setAdRevenue(double adRevenue) {
+		this.adRevenue = adRevenue;
+	}
+	public char getVenue() {
+		return Venue;
+	}
+	public void setVenue(char venue) {
+		Venue = venue;
+	}
+	public String getSport() {
+		return sport;
+	}
+	public void setSport(String sport) {
+		this.sport = sport;
+	}
+	public String toString(){
+		return "Name:"+this.firstName+" "+this.lastName;//unfinished
+	}
+	public String display(){
+		return "Name:"+this.firstName+" "+this.lastName;//unfinished
+	}
+	public int equal(String lastName,String firstName){
+		if()
+	}
+
+}

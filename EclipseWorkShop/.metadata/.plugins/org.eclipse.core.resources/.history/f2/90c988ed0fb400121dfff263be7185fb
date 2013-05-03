@@ -1,0 +1,20 @@
+
+public class ObjArray {
+	Object data;
+	int index;
+	int size;
+	public ObjArray() {
+		size = 100;
+		index = 0;
+		data = new Object[size];
+	}
+	public void add(Object a){
+		if(isFull()){
+			expand();
+		}
+		data[index] = a;
+		index++;
+	}
+	
+
+}

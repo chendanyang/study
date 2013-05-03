@@ -1,0 +1,36 @@
+
+public class Client {
+
+	public static void main(String[] args) {
+		Server ser = new Server();
+		readFile(ser);
+		boolean flag = true;
+		while(flag){
+			flag = menu(ser);
+		}
+		
+		/*
+		 * quit the program
+		 */
+
+	}
+	public static Server readFile(Server ser) throws Exception{//reading file
+		
+		return ser;
+	}
+	public static boolean menu(Server ser){//display the menu and promote user to input a commend and run it
+		boolean flag = true;
+		/*
+		 * display the menu
+		 */
+		
+		/*
+		 * wait for input
+		 */
+		
+		/*
+		 * call the appropriate method in Server class
+		 */
+		return flag;
+	}
+}

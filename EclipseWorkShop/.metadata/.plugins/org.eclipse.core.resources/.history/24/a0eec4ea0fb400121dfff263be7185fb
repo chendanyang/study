@@ -1,0 +1,17 @@
+
+public class ObjArray {
+	Object array;
+	int index;
+	int size;
+	public ObjArray() {
+		size = 100;
+		index = 0;
+		array = new Object[size];
+	}
+	public void add(Object a){
+		if(isFull()){
+			
+		}
+	}
+
+}

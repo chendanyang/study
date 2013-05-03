@@ -1,0 +1,33 @@
+
+public class ObjArray {
+	Object data[];
+	int index;
+	int size;
+	public ObjArray() {
+		size = 100;
+		index = 0;
+		data = new Object[size];
+	}
+	public void add(Object a){
+		if(isFull()){
+			expand();
+		}
+		data[index] = a;
+		index++;
+	}
+	public Object findAthlete(int pointer){
+		return data[pointer];
+	}
+	public boolean isFull(){
+		return index>=size;
+	}
+	public void expand(){
+		Object temp[] = data;
+		size *=2;
+		data = new Object[size];
+		for(int i = 0;i<index;i++){
+			data[i] = temp[i];
+		}
+	}
+
+}

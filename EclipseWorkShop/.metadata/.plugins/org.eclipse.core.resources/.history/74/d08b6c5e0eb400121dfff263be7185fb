@@ -1,0 +1,12 @@
+
+class Athlete {
+	String lastName;
+	String firstName;
+	int age;
+	double adRevenue;
+	char Venue;
+	String sport;
+	public Athlete() {
+	}
+
+}

@@ -1,0 +1,9 @@
+
+class Server {
+	ObjArray data;
+	
+	public Server() {
+		data = new ObjArray();
+	}
+
+}
