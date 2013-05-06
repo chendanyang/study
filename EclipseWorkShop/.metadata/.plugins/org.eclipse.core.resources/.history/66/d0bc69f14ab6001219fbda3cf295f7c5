@@ -1,0 +1,34 @@
+
+class Server {
+	Athlete data[];
+	int index;
+	int size;
+	public Server() {
+		index = 0;
+		size = 200;
+		data = new Athlete[size];
+	}
+	public void addData(Athlete a){
+		data[index] = a;
+		index++;
+	}
+	public void delData(int index){
+		
+	}
+	public void list(){
+		
+	}
+	public void displayAthlete(int index){
+		
+	}
+	public void displayCountry(String c){
+		
+	}
+	public void displayRevenue(int index){
+		
+	}
+	public void displayVenue(int index){
+		
+	}
+	
+}

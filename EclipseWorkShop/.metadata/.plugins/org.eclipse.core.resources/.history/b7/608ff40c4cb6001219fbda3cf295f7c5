@@ -1,0 +1,39 @@
+
+class Server {
+	Athlete data[];
+	int pointer;
+	int size;
+	public Server() {
+		pointer = 0;
+		size = 200;
+		data = new Athlete[size];
+	}
+	public void addData(Athlete a){
+		data[pointer] = a;
+		pointer++;
+	}
+
+	public void list(){
+		System.out.println("List of all athletes available.");
+		Athlete temp;
+		for(int i =0;i<pointer;i++){
+			temp = data[i];
+			System.out.println("Name: "+temp.getFirstName()+" "+temp.getLastName() +"Nation: "+temp.getCountry());
+		}
+	}
+	public void displayAthlete(int pointer){
+		Athlete temp = data[pointer];
+		System.out.println("Display Athlete:");
+		System.out.println(temp);
+	}
+	public void displayCountry(String c){
+		
+	}
+	public void displayRevenue(int pointer){
+		
+	}
+	public void displayVenue(int pointer){
+		
+	}
+	
+}

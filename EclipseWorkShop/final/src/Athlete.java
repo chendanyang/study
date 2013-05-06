@@ -6,6 +6,8 @@ class Athlete {
 	double adRevenue;
 	char Venue;
 	String sport;
+	String country;
+
 	public Athlete() {
 		lastName = "";
 		firstName = "";
@@ -15,7 +17,18 @@ class Athlete {
 		sport = "";
 	}
 	public Athlete(String aLastName,String aFirstName,int aAge,double aAdRevenue,char aVenue,String aSport){
-		
+		lastName = aLastName;
+		firstName = aFirstName;
+		age = aAge;
+		adRevenue = aAdRevenue;
+		Venue = aVenue;
+		sport = aSport;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	public String getLastName() {
 		return lastName;
@@ -54,12 +67,13 @@ class Athlete {
 		this.sport = sport;
 	}
 	public String toString(){
-		return "Name:"+this.firstName+" "+this.lastName;//unfinished
+		return "Name:"+this.firstName+" "+this.lastName+" Age:"+this.getAge()+" AdRevenue:"+this.getAdRevenue()+" Venue:"+this.getVenue()+" Sport:"+this.getSport();
+		
 	}
-	public String display(){
-		return "Name:"+this.firstName+" "+this.lastName;//unfinished
+	public void display(){
+		System.out.println(this.toString());//unfinished
 	}
-	public boolean equals(String aLastName,String aFirstName){//has problem here!
+	public boolean equals(String aLastName,String aFirstName){
 		if(lastName.equals(aLastName)&&firstName.equals(aFirstName)){
 			return true;
 		}else{

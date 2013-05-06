@@ -1,0 +1,39 @@
+
+class Server {
+	Athlete data[];
+	int index;
+	int size;
+	public Server() {
+		index = 0;
+		size = 200;
+		data = new Athlete[size];
+	}
+	public void addData(Athlete a){
+		data[index] = a;
+		index++;
+	}
+
+	public void list(){
+		System.out.println("List of all athletes available.");
+		Athlete temp;
+		for(int i =0;i<index;i++){
+			temp = data[i];
+			System.out.println("Name: "+temp.getFirstName()+" "+temp.getLastName() +"Nation: "+temp.getCountry());
+		}
+	}
+	public void displayAthlete(int index){
+		Athlete temp = data[index];
+		System.out.println("Display Athlete:");
+		System.out.println(temp);
+	}
+	public void displayCountry(String c){
+		
+	}
+	public void displayRevenue(int index){
+		
+	}
+	public void displayVenue(int index){
+		
+	}
+	
+}

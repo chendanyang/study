@@ -15,7 +15,7 @@ public class ObjArray {
 		data[index] = a;
 		index++;
 	}
-	public Object findAthlete(int pointer){
+	public Athlete findAthlete(int pointer){
 		return data[pointer];
 	}
 	public boolean isFull(){
@@ -28,9 +28,6 @@ public class ObjArray {
 		for(int i = 0;i<index;i++){
 			data[i] = temp[i];
 		}
-	}
-	public boolean delAthlete(int pointer){//
-		return true;
 	}
 
 }
